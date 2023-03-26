@@ -1,5 +1,14 @@
 {
     "scripts": {
       "test": "jest"
+    },
+    "jest": {
+      "collectCoverage": true,
+      "collectCoverageFrom": ["./src/**"],
+      "coverageThreshold": {
+        "global": {
+          "lines": 100
+        }
+      }
     }
-  }
+}

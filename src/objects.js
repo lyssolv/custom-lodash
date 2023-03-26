@@ -14,20 +14,7 @@ function merge(destObj, ...sources) {
     return destObj;
 }
 
-/* function merge(destObj, ...sources) {
-    for (const source of sources) {
-      for (const [key, value] of Object.entries(source)) {
-        if (typeof value === 'object' && typeof destObj[key] === 'object') {
-            destObj[key] = merge(destObj[key], value); 
-        } else {
-            destObj[key] = value;
-        }
-      }
-    }
-    return destObj;
-} */
-
-
+//console.log(merge({a: 1, b: 2},{c: 3, d: 4}));
 /*
     Creates an object composed of the picked object properties. */
 
@@ -36,28 +23,11 @@ function pick(obj, paths) {
     let result = {};
     for (let i = 0; i < paths.length; i += 1) {
         let key = paths[i];
-        if (hasProp(obj, key)) {
+        if (obj[key]) {
             result = {...result, [key]: obj[key]};
         }
     }
     return result;
-}
-
-
-function hasProp(obj, prop) {
-    let arrFrom = [];
-    for (const key in obj) {
-        arrFrom = [...arrFrom, key];
-    }
-    for (const key in obj) {
-        arrFrom = [...arrFrom, key];
-    }
-    for (let i = 0; i < arrFrom.length; i += 1) {
-        if (arrFrom[i] === prop) {
-            return true;
-        }
-    }
-    return false;
 }
 
 
@@ -114,4 +84,3 @@ module.exports = {
     omitBy,
     omit,
 };
-

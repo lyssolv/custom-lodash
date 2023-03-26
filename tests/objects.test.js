@@ -6,6 +6,7 @@ test('merge should return the merged object', () => {
     expect(methods.merge({a: 1}, {c: 3}, {b: 2}, {d: 4})).toStrictEqual({a: 1, c: 3, b: 2, d: 4});
     expect(methods.merge({a: 1, b: 3}, {a: 3, c: 1}, {b: 2})).toStrictEqual({a: 3, b: 2, c: 1});
     expect(methods.merge({a: 1, b: 3}, {c: undefined, d: 1})).toStrictEqual({a: 1, b: 3, d: 1});
+    // expect(methods.merge({a: [{ b: 2 }, { d: 4 }]}, {a: [{ c: 3 }, { e: 5 }]})).toStrictEqual({ a: [{ b: 2, c: 3 }, { d: 4, e: 5 }] });
 });
 
 
